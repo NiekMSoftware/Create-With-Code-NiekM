@@ -6,7 +6,12 @@ using UnityEngine;
 public class DetectCollision : MonoBehaviour
 {
     void OnTriggerEnter(Collider other) {
-        Destroy(gameObject);
-        Destroy(other.gameObject);
+        if (other.CompareTag("Destroyer")) {
+            Destroy(GameObject.FindWithTag("Animal"));
+        }
+        else {
+            Destroy(gameObject);
+            Destroy(other.gameObject);
+        }
     }
 }

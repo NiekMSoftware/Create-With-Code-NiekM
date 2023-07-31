@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,7 +10,11 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] float speed;
 
     [SerializeField] GameObject projectile;
-    
+
+    void Awake() {
+        Time.timeScale = 1f;
+    }
+
     // Update is called once per frame
     void Update() {
         // Limit where the player can go to
